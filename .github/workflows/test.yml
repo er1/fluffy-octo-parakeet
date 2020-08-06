@@ -9,6 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Create hi.txt
     - run: |
-        echo Hello
-        exit 1
+        echo Hello > hi.txt
+    - name: Upload hi.txt
+      uses: actions/upload-artifact@v2
+      with:
+        name: hello.txt
+        path: hi.txt
