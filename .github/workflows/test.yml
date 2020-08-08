@@ -11,9 +11,9 @@ jobs:
     steps:
     - name: Create hi.txt
       run: |
-        echo Hello > hi.txt
+        curl -sSLo grad.png https://tamaranch.com/grad.png
     - name: Upload hi.txt
       uses: actions/upload-artifact@v2
       with:
-        name: hello.txt
-        path: hi.txt
+        name: image.png
+        path: grad.png
