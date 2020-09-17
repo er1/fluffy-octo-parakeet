@@ -7,3 +7,6 @@ Foxtrot
 Golf
 Hotel
 India
+Juliette
+Kilo
+Lima
