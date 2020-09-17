@@ -12,3 +12,5 @@ Kilo
 Lima
 Mike
 November
+Oscar
+Papa
