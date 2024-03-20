@@ -21,7 +21,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          await github.request('POST /repos/' + context.repository + '/releases', {
+          await github.request('POST /repos/' + process.env.GITHUB_REPOSITORY + '/releases', {
             tag_name: 'tag-' + context.sha.slice(0,7),
             draft: true,
             prerelease: true,
