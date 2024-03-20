@@ -12,7 +12,7 @@ jobs:
       run: |
         gzip -n < r.txt > r.gz
     - name: Upload r.gz
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: txt.gz
         path: r.gz
