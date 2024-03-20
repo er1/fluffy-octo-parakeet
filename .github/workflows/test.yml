@@ -12,6 +12,8 @@ jobs:
       run: |
         gzip -n < r.txt > r.gz
         gh release create tag-${GITHUB_SHA:0:7} r.gz
+      env:
+        GH_TOKEN: ${{ github.token }}
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
