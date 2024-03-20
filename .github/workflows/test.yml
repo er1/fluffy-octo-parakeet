@@ -6,11 +6,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Create hi.txt
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Create r.gz
       run: |
-        curl -sSLo grad.png https://tamaranch.com/grad.png
-    - name: Upload hi.txt
+        gzip -n < r.txt > r.gz
+    - name: Upload r.gz
       uses: actions/upload-artifact@v2
       with:
-        name: image.png
-        path: grad.png
+        name: txt.gz
+        path: r.gz
