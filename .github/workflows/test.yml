@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Build and create release
+      run: |
+        gzip -n < r.txt > r.gz
+        gh release create tag-${GITHUB_SHA:0:7} r.gz
+      env:
+        GH_TOKEN: ${{ github.token }}
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: txt.gz
+        path: r.gz
